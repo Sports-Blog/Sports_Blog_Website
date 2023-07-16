@@ -1,0 +1,51 @@
+.register{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url(https://cdn.clubleonen.com/how_long_is_grass_on_a_soccer_field.jpg);
+    background-size: cover;
+}
+
+.registerTitle{
+    font-size: 50px;
+}
+
+.registerForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm>label{
+    margin: 10px 0px;
+}
+
+.registerInput{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.registerInputUser{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.registerPassword{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.registerButton{
+    margin-top: 10px;
+}
+.loginButton{
+    margin-top: 10px;
+}

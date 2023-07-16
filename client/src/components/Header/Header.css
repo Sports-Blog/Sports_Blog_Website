@@ -1,0 +1,17 @@
+.header{
+    margin-top: 60px;
+}
+
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: grey;
+    font-size: x-large;
+}
+
+.headerImage{
+    width: 100%;
+    height: 550px;
+    margin-top: 80px;
+}

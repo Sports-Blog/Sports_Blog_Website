@@ -1,0 +1,41 @@
+.newArticle{
+    padding-top: 50px;
+}
+
+.newArticleForm{
+    position: relative;
+}
+
+.newArticleFormGroup{
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.newArticleInput{
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+}
+
+.newArticleInput:focus{
+    outline: none;
+}
+
+.newArticleText{
+    font-size: 20px; 
+}
+
+.newArticleSubmit{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+.newArticleImg{
+    margin-left: 150px;
+    width: 70vw;
+    height: 250px;
+    border-radius: 10px;
+}
