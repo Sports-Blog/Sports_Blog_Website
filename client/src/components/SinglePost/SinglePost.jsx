@@ -1,28 +1,50 @@
 import './SinglePost.css'
 import Button from "react-bootstrap/Button"
+import { useLocation } from "react-router";
+import {useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 export default function SinglePost() {
+  const url ="http://localhost:5000/server/posts"
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get(url + "/" + path);
+      setPost(res.data);
+    };
+    getPost();
+  }, [path]);
+
   return (
     <div className='singlePost'>
         <div className="singlePostWrapper">
-            <img src="https://c4.wallpaperflare.com/wallpaper/1012/836/917/peacefulness-wallpaper-preview.jpg" alt="" className="singlePostImg" />
+            {post.photo && (
+            <img src={post.photo} alt="" className="singlePostImg" />)}
             <h1 className="singlePostTitle">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                <div className="singlePostEdit">
+                {post.title}
+          <div className="singlePostEdit">
                     <Button variant="secondary">Edit</Button>
                     <Button variant='danger'>Delete</Button>
                 </div>
             </h1>
             <div className="singlePostInfo">
                 <span className='singlePostAuthor'>
-                    Author: <b>Dimitris</b>
+                    Author: 
+                    <Link to={`/?user=${post.username}`} className="link">
+              <b>{post.username}</b> 
+              </Link>
                 </span>
                 <span className='singlePostDate'>
-                    1 hour ago
+                {new Date(post.createdAt).toDateString()}
                 </span>
             </div>
             <p className='singlePostDesc'>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius ut doloremque non voluptatum, expedita quis consequuntur corrupti nemo quas. Molestiae debitis ab sint incidunt quam rem et veniam labore adipisci.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius ut doloremque non voluptatum, expedita quis consequuntur corrupti nemo quas. Molestiae debitis ab sint incidunt quam rem et veniam labore adipisci.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius ut doloremque non voluptatum, expedita quis consequuntur corrupti nemo quas. Molestiae debitis ab sint incidunt quam rem et veniam labore adipisci.
+                {post.desc}
             </p>
         </div>
     </div>
