@@ -1,17 +1,19 @@
-.header{
+.Header{
     margin-top: 60px;
 }
 
-.headerTitles{
+.headerTitle{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: grey;
-    font-size: x-large;
+    color: rgb(115, 160, 12);
+    font-size: 80px;
 }
 
-.headerImage{
+.headerImg{
     width: 100%;
-    height: 550px;
+    height: 450px;
     margin-top: 80px;
+    object-fit: cover;
 }
+

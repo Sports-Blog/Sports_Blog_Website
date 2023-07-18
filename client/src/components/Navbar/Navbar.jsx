@@ -3,13 +3,19 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Image from "react-bootstrap/Image"
 import "./NavBar.css"
-
-
+import { useContext } from "react";
+import { Context } from "../../context/context";
+import { Link } from "react-router-dom";
 
 function Navbara() {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/"
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+  
   return (
     <Navbar
       expand="lg"
@@ -25,8 +31,11 @@ function Navbara() {
           <Nav className="me-auto">
             <Nav.Link href="/">HOME</Nav.Link>
             <Nav.Link href="/newArticle">NEW ARTICLE</Nav.Link>
-              { user ? ( <><Image src="https://image.winudf.com/v2/image1/bmV0LndsbHBwci5ib3lzX3Byb2ZpbGVfcGljdHVyZXNfc2NyZWVuXzBfMTY2NzUzNzYxN18wOTk/screen-0.webp?fakeurl=1&type=.webp" className="topImg"/> <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
+              { user ? ( <> <Link to="/settings">
+            <img className="topImg" src={PF + user.profilePic} alt="" />
+          </Link><NavDropdown title="ACCOUNT" id="basic-nav-dropdown">
               <NavDropdown.Item href="/settings">MY ACCOUNT</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleLogout}>{user && "LOGOUT"}</NavDropdown.Item>
               </NavDropdown></>) : (
                 <>
                 <NavDropdown title="ACCOUNT" id="basic-nav-dropdown">

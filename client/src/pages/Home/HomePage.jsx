@@ -3,10 +3,12 @@ import Posts from "../../components/Posts/Posts"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
+import "./Home.css"
 
-const url = "http://localhost:5000/server/posts"
+
 
 export default function HomePage() {
+  const url = "http://localhost:5000/server/posts"
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
 
@@ -19,9 +21,11 @@ export default function HomePage() {
   }, [search]);
 
   return (
+    <>
+    <Header/>
     <div className="home">
-        <Header/>
         <Posts posts={posts}/>
     </div>
+    </>
   )
 }

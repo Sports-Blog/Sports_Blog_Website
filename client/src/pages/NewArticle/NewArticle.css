@@ -1,41 +1,51 @@
-.newArticle{
+.write {
     padding-top: 50px;
-}
-
-.newArticleForm{
-    position: relative;
-}
-
-.newArticleFormGroup{
-    margin-left: 150px;
-    display: flex;
-    align-items: center;
-}
-
-.newArticleInput{
-    font-size: 30px;
-    border: none;
-    padding: 20px;
-    width: 70vw;
-}
-
-.newArticleInput:focus{
-    outline: none;
-}
-
-.newArticleText{
-    font-size: 20px; 
-}
-
-.newArticleSubmit{
-    position: absolute;
-    top: 20px;
-    right: 50px;
-}
-
-.newArticleImg{
+  }
+  
+  .writeImg {
     margin-left: 150px;
     width: 70vw;
     height: 250px;
     border-radius: 10px;
-}
+    object-fit: cover;
+  }
+  
+  .writeForm {
+    position: relative;
+  }
+  
+  .writeFormGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .writeInput {
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+  }
+  
+  .writeInput:focus {
+    outline: none;
+  }
+  
+  .writeText {
+    font-size: 20px;
+    height: 100vh;
+  }
+  
+  .writeSubmit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
