@@ -1,5 +1,6 @@
-import Header from "../../components/Header/Header"
 import Posts from "../../components/Posts/Posts"
+import FeaturedPosts from "../../components/FeaturedPosts/FeaturedPosts";
+import Feed from "../../components/Feed/Feed"; 
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
@@ -19,12 +20,20 @@ export default function HomePage() {
     };
     fetchPosts();
   }, [search]);
+  
+  const featured = posts.slice(0, 3);
+  const rest = posts.slice(3);
 
   return (
     <>
-    <Header/>
     <div className="home">
-        <Posts posts={posts}/>
+       <section className="home-main">
+        <FeaturedPosts posts={featured}/>
+        <Posts posts={rest}/>
+        </section>
+        <aside className="home-feed">
+          <Feed posts={posts}/>
+        </aside>
     </div>
     </>
   )

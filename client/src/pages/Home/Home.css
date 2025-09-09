@@ -1,3 +1,17 @@
-.home{
-    display: grid;
+.home {
+  display: grid;          
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;                
+  align-items: start;
+  padding: 16px;
+}
+
+.home-main {
+  display: grid;
+  gap: 100px;
+}
+
+.home-feed {
+  position: sticky;
+  top: 80px;
 }
