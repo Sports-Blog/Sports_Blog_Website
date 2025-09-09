@@ -34,7 +34,7 @@ function Navbara() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center gap-3">
             {user && (
-            <Nav.Link href="/newArticle">NEW ARTICLE</Nav.Link>
+            <Nav.Link href="/newArticle">ADD NEW ARTICLE</Nav.Link>
             )}
               { user ? ( <> <Link to="/settings" className="d-inline-flex align-items-center">
                   <img className="topImg" src={PF + user.profilePic} alt="Profile" />
